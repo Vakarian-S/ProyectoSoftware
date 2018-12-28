@@ -8,7 +8,7 @@ class ActividadASP extends Model
 {
 
     protected $fillable = [
-        'nombre', 'asignatura', "profesor", "cantEstudiantes", "periodo","evidencia"
+        'nombre', 'asignatura', "profesor", "cant_estudiantes", "periodo","evidencia"
     ]; //
     //
 }

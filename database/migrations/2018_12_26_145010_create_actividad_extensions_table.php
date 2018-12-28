@@ -20,10 +20,10 @@ class CreateActividadExtensionsTable extends Migration
             $table->string('organizador');
             $table->string('orador');
             $table->date('fecha');
-            $table->unsignedInteger(('cantAsistentes'));
+            $table->unsignedInteger(('cant_asistentes'));
             $table->string('evidencia');
-            $table->unsignedInteger('Convenioid')->nullable();
-            $table->foreign('Convenioid')->references('id')->on('convenios');
+            $table->unsignedInteger('convenio_id')->nullable();
+            $table->foreign('convenio_id')->references('id')->on('convenios');
             $table->timestamps();
         });
     }

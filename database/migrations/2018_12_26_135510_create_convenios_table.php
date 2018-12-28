@@ -15,12 +15,12 @@ class CreateConveniosTable extends Migration
     {
         Schema::create('convenios', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('fechaInicio');
-            $table->date('fechaTermino');
-            $table->string('tipoConvenio');
+            $table->date('fecha_inicio');
+            $table->date('fecha_termino');
+            $table->string('tipo_convenio');
             $table->string('evidencia');
-            $table->unsignedInteger('Organizacionid');
-            $table->foreign('Organizacionid')->references('id')->on('organizacions');
+            $table->unsignedInteger('organizacion_id');
+            $table->foreign('organizacion_id')->references('id')->on('organizacions');
             $table->timestamps();
         });
     }

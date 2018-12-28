@@ -8,7 +8,7 @@ class Convenio extends Model
 {
 
     protected $fillable = [
-        'fechaInicio', 'fechaTermino', "tipoConvenio", "evidencia", "Organizacionid"
+        'fecha_inicio', 'fecha_termino', "tipo_convenio", "evidencia", "organizacion_id"
     ]; //
 
     public function organizacion(){

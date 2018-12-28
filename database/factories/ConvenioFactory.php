@@ -4,11 +4,11 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Convenio::class, function (Faker $faker) {
     return [
-        'tipoConvenio' => $faker->randomElement(['Capstone','Marco','Especifico','A+S']),
-        'fechainicio' => $faker->dateTime(),
-        'fechatermino'=>$faker->dateTime(),
+        'tipo_convenio' => $faker->randomElement(['Capstone','Marco','Especifico','A+S']),
+        'fecha_inicio' => $faker->dateTime(),
+        'fecha_termino'=>$faker->dateTime(),
         'evidencia' => $faker->url,
-        'Organizacionid' => rand(1,App\Organizacion::count()),
+        'organizacion_id' => rand(1,App\Organizacion::count()),
         //
     ];
 });

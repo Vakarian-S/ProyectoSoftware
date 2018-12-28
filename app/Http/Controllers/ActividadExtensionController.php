@@ -82,4 +82,19 @@ class ActividadExtensionController extends Controller
     {
         //
     }
+
+    public function registrarExtension(Request $request)
+    {
+        $extension = new ActividadExtension();
+        $extension->nombre = $request->nombre;
+        $extension->localizacion = $request->localizacion;
+        $extension->organizador = $request->organizador;
+        $extension->orador = $request->orador;
+        $extension->fecha = $request->fecha;
+        $extension->cant_asistentes = $request->cant_asistentes;
+        $extension->evidencia = $request->evidencia;
+        $extension->save();
+
+        return view('registroExtension');
+    }
 }

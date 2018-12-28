@@ -12,9 +12,9 @@ $factory->define(App\ActividadExtension::class, function (Faker $faker) {
         'organizador'=>$faker->name,
         'orador' => $faker->name,
         'fecha' => $faker ->dateTime,
-        'cantAsistentes' => rand(1,50),
+        'cant_asistentes' => rand(1,50),
         'evidencia' => $faker->imageUrl(),
-        'Convenioid' => $convenioid
+        'convenio_id' => $convenioid
         //
     ];
 });

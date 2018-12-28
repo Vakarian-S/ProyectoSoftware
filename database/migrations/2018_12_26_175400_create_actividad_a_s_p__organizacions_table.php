@@ -14,10 +14,10 @@ class CreateActividadASPOrganizacionsTable extends Migration
     public function up()
     {
         Schema::create('actividad_a_s_p__organizacions', function (Blueprint $table) {
-            $table->unsignedInteger('ActividadASPid');
-            $table->foreign('ActividadASPid')->references('id')->on('actividad_a_s_ps');
-            $table->unsignedInteger('Organizacionid');
-            $table->foreign('Organizacionid')->references('id')->on('organizacions');
+            $table->unsignedInteger('actividadasp_id');
+            $table->foreign('actividadasp_id')->references('id')->on('actividad_a_s_ps');
+            $table->unsignedInteger('organizacion_id');
+            $table->foreign('organizacion_id')->references('id')->on('organizacions');
             $table->timestamps();
         });
     }

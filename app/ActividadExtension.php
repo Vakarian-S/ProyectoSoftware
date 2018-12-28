@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class ActividadExtension extends Model
 {
     protected $fillable = [
-        'nombre', 'localizacion', "organizador", "orador", "fecha", "cantAsistentes", "evidencia"
-        , "Convenioid"
+        'nombre', 'localizacion', "organizador", "orador", "fecha", "cant_asistentes", "evidencia"
+        , "convenio_id"
     ]; //
 
     public function convenio(){
