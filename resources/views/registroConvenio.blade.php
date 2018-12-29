@@ -1,5 +1,8 @@
 @extends('UCN_layout')
 
+@section('title')Registrar convenio
+@endsection
+
 @section('content')
 <title>Registro de convenios</title>
 <body>
@@ -7,7 +10,7 @@
 <form autocomplete="off" method="POST" action="{{url('/registroConvenio')}}">
     {{ csrf_field() }}
     <div class="form-group row">
-        <label for="inputOrganizacion" class="col-sm-2 col-form-label">Nombre de organizacion</label>
+        <label for="inputOrganizacion" class="col-sm-2 col-form-label">Nombre de organización</label>
         <div class="col-sm-3">
             <input type="text" class="form-control" name= "nombre" id="inputOrganizacion">
         </div>
@@ -31,7 +34,7 @@
     </div>
 
     <div class="form-group row">
-        <label for="inputFechaTermino" class="col-sm-2 col-form-label">Fecha Termino</label>
+        <label for="inputFechaTermino" class="col-sm-2 col-form-label">Fecha Término</label>
         <div class="col-sm-3">
             <input onkeydown="return false" id="datepicker" class="date" name = "fecha_termino"width="276" />
         </div>
@@ -47,12 +50,12 @@
     <div class="form-group row">
         <div class="col-sm-2">
         <span class="border">
-          <button type="submit" class="btn btn-default">Confirmar</button>
+          <button type="submit" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" >Confirmar</button>
         </span>
         </div>
         <div class="col-sm-3">
         <span class="border">
-            <button type="button" class="btn btn-default">Cancelar</button>
+            <a class="btn btn-secondary" href="{{route('menuRegistros')}}" role="button">Cancelar</a>
         </span>
         </div>
     </div>
@@ -73,6 +76,7 @@
 
 
 <!-- Optional JavaScript -->
+
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="{{asset('https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo')}}" crossorigin="anonymous"></script>
 <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut')}}" crossorigin="anonymous"></script>

@@ -26,7 +26,7 @@ class ActividadASPController extends Controller
      */
     public function create()
     {
-        //
+        return view('registroASP');//
     }
 
     /**
@@ -37,6 +37,26 @@ class ActividadASPController extends Controller
      */
     public function store(Request $request)
     {
+        $data = request()->all();
+
+        ActividadASP::create([
+            'nombre' => $data['nombre'],
+            'asignatura' => $data['asignatura'],
+            'profesor' => $data['profesor'],
+            'periodo' => $data['periodo'],
+            'cant_estudiantes' => $data['cant_estudiantes'],
+            'evidencia' => $data['evidencia'],
+        ]);
+
+        $socioComunitario = $data['nombre_organizacion'];
+        $organizacionId = Organizacion::where('nombre',$socioComunitario)->first()->id;
+        $actividadId = ActividadASP::where('nombre',$request->nombre)->first()->id;
+        ActividadASP_Organizacion::create([
+            'actividadasp_id' => $actividadId,
+            'organizacion_id' => $organizacionId,
+        ]);
+
+        return view('registros');
         //
     }
 
@@ -91,24 +111,5 @@ class ActividadASPController extends Controller
         //        $extension->evidencia = $request->evidencia;
         //        $extension->save();
     }
-    public function registrarASP(Request $request)
-    {
-        $extension = new ActividadASP();
-        $extension->nombre = $request->nombre;
-        $extension->asignatura = $request->asignatura;
-        $extension->profesor= $request->profesor;
-        $extension->periodo = $request->periodo;
-        $extension->cant_estudiantes = $request->cant_estudiantes;
-        $extension->evidencia = $request->evidencia;
-        $extension->save();
 
-        $socioComunitario = $request->nombreSocio;
-        $organizacionId = Organizacion::where('nombre',$socioComunitario)->first()->id;
-        $actividadId = ActividadASP::where('nombre',$request->nombre)->first()->id;
-        ActividadASP_Organizacion::create([
-            'actividadasp_id' => $actividadId,
-            'organizacion_id' => $organizacionId,
-        ]);
-        return view('registroASP');
-    }
 }

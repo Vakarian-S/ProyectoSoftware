@@ -1,21 +1,16 @@
 @extends('UCN_layout')
 
+@section('title')Registros
+@endsection
+
 @section('content')
 <body>
 
-<div class="title flex-center m-b-md">
-    <font color="333333">Registros<font>
+<div class="container p-5">
+    <a class="btn btn-primary btn-lg btn-block p-5" href="{{route('registroConvenio')}}" role="button"><font size="50">Registrar Convenios de Colaboración</font></a>
+    <a class="btn btn-primary btn-lg btn-block p-5" href="{{route('registroASP')}}" role="button"><font size="50">Registrar  Actividad de Aprendizaje + Servicios</font></a>
+    <a class="btn btn-primary btn-lg btn-block p-5" href="{{route('registroExtension')}}" role="button"><font size="50">Registrar Actividad de Extensión</font></a>
 </div>
-<div>
-    <p align="center"><a href="{{route('registroConvenio')}}"><font size=7 > Registrar Convenios de Colaboracion </font></a></p>
-</div>
-<div>
-    <p align="center"><a href="{{route('registroASP')}}"><font size=7 > Registrar  Actividad de Aprendisaje + Servicios</font></a></p>
-</div>
-<div>
-    <p align="center"><a href="{{route('registroExtension')}}"><font size=7 > Registrar Actividad de Extencion </font></a></p>
-</div>
-
 </body>
 </html>
     @endsection

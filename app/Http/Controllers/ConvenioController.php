@@ -50,7 +50,7 @@ class ConvenioController extends Controller
             'evidencia' => $data['evidencia'],
         ]);
 
-        return view('registroConvenio');
+        return view('registros');
 
         //
     }
